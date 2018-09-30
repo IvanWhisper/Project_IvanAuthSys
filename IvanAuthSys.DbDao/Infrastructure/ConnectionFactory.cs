@@ -10,17 +10,19 @@ namespace IvanAuthSys.DbDao.Infrastructure
 {
     public class ConnectionFactory : IConnectionFactory
     {
-        private readonly string connectionString = "";//ConfigurationManager.ConnectionStrings["DTAppCon"].ConnectionString;
-        public IDbConnection GetConnection
+        public static string ConnectionString => "Data Source=127.0.0.1;port=3306;Initial Catalog=ivanauthsys;user id=root;password=abc@123456;Charset=utf8;SslMode = none;";//ConfigurationManager.ConnectionStrings["DTAppCon"].ConnectionString;
+        public IDbConnection GetConnections
         {
             get
             {
                 var factory = DbProviderFactories.GetFactory("System.Data.SqlClient");
                 var conn = factory.CreateConnection();
-                conn.ConnectionString = connectionString;
+                conn.ConnectionString = ConnectionString;
                 conn.Open();
                 return conn;
             }
         }
+
+        public IDbConnection GetConnection => throw new NotImplementedException();
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using IvanAuthSys.DbDao.Infrastructure;
 using IvanAuthSys.DbDao.UnitOfWork;
 using IvanAuthSys.Interface;
 
@@ -39,7 +40,7 @@ namespace IvanAuthSys.DbDao.Repositories
         {
             //改string映射
             //SqlMapper.AddTypeMap(typeof(string), System.Data.DbType.AnsiString);
-            Conn =new MySql.Data.MySqlClient.MySqlConnection(""); //DbConnectionFactory.CreateDbConnection();
+            Conn = DataBasePool.getInstance().getConnection();//DbConnectionFactory.CreateDbConnection();
             unitOfWork = new UnitOfWork<T>(Conn);
         }
         /// <summary>

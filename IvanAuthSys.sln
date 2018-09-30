@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvanAuthSys", "IvanAuthSys\IvanAuthSys.csproj", "{A3F95FEC-147D-4777-B8F4-AACA1DE5C865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IvanAuthSys", "IvanAuthSys\IvanAuthSys.csproj", "{A3F95FEC-147D-4777-B8F4-AACA1DE5C865}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E41E8233-87C2-4932-A229-567F9F3F4E9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvanAuthSys.Interface", "IvanAuthSys.Interface\IvanAuthSys.Interface.csproj", "{393D0C2B-BF73-442A-BC8D-A12E856D670A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IvanAuthSys.Interface", "IvanAuthSys.Interface\IvanAuthSys.Interface.csproj", "{393D0C2B-BF73-442A-BC8D-A12E856D670A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvanAuthSys.DbDao", "IvanAuthSys.DbDao\IvanAuthSys.DbDao.csproj", "{9DF4728D-0233-44AC-B530-AEB8ADC3647B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IvanAuthSys.DbDao", "IvanAuthSys.DbDao\IvanAuthSys.DbDao.csproj", "{9DF4728D-0233-44AC-B530-AEB8ADC3647B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvanAuthSys.Logger", "IvanAuthSys.Logger\IvanAuthSys.Logger.csproj", "{F7998DF3-C5B6-458E-8760-4C7CB4681981}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IvanAuthSys.Logger", "IvanAuthSys.Logger\IvanAuthSys.Logger.csproj", "{F7998DF3-C5B6-458E-8760-4C7CB4681981}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvanAuthSys.Service", "IvanAuthSys.Service\IvanAuthSys.Service.csproj", "{EB7361FE-8149-40CD-B614-D8E336B1AEE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IvanAuthSys.Service", "IvanAuthSys.Service\IvanAuthSys.Service.csproj", "{EB7361FE-8149-40CD-B614-D8E336B1AEE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A148FE98-3264-4AB4-A640-848BCA6C74BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbTest", "DbTest\DbTest.csproj", "{7BAB3123-DA2C-4347-B23F-2CD48A7AD78E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,10 @@ Global
 		{EB7361FE-8149-40CD-B614-D8E336B1AEE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB7361FE-8149-40CD-B614-D8E336B1AEE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB7361FE-8149-40CD-B614-D8E336B1AEE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BAB3123-DA2C-4347-B23F-2CD48A7AD78E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BAB3123-DA2C-4347-B23F-2CD48A7AD78E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BAB3123-DA2C-4347-B23F-2CD48A7AD78E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BAB3123-DA2C-4347-B23F-2CD48A7AD78E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,7 @@ Global
 		{9DF4728D-0233-44AC-B530-AEB8ADC3647B} = {E41E8233-87C2-4932-A229-567F9F3F4E9F}
 		{F7998DF3-C5B6-458E-8760-4C7CB4681981} = {E41E8233-87C2-4932-A229-567F9F3F4E9F}
 		{EB7361FE-8149-40CD-B614-D8E336B1AEE5} = {E41E8233-87C2-4932-A229-567F9F3F4E9F}
+		{7BAB3123-DA2C-4347-B23F-2CD48A7AD78E} = {A148FE98-3264-4AB4-A640-848BCA6C74BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7706F09B-49CA-4FF1-8F76-B7E592C01F01}

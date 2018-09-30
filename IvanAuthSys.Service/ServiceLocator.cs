@@ -10,7 +10,6 @@ namespace IvanAuthSys.Service
         {
             var builder = new ContainerBuilder();
 
-
             ApplicationContainer = builder.Build();
         }
     }

@@ -16,8 +16,7 @@ namespace IvanAuthSys.DbDao.Infrastructure
         private Stack<MySqlConnection> pool;
         private const int POOL_MAX_SIZE = 20;
         private int current_Size = 0;
-        private string ConnString = "";//连接字符串 
-        private const string SYS_PROPERTY = "config\\SysProperty.xml";
+        private string ConnString = ConnectionFactory.ConnectionString;//连接字符串 
         private static DataBasePool connPool;
         private DataBasePool()
         {
