@@ -28,7 +28,6 @@ namespace IvanAuthSys.DbDao.Repositories
                 }
             }
         }
-
         /// <summary>
         /// 单元任务
         /// </summary>
@@ -192,8 +191,5 @@ namespace IvanAuthSys.DbDao.Repositories
                 return Conn.Execute(sqlformat, entity);
             }
         }
-
-
-
     }
 }

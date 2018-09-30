@@ -5,17 +5,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="NLog.config" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="sql\" />
-    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="NLog" Version="4.5.10" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IvanAuthSys.Interface\IvanAuthSys.Interface.csproj" />
     <ProjectReference Include="..\IvanAuthSys.Service\IvanAuthSys.Service.csproj" />
   </ItemGroup>
 

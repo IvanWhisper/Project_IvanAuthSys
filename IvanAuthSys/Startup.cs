@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -23,12 +25,32 @@ namespace IvanAuthSys
         }
 
         public IConfiguration Configuration { get; }
-
+        public IContainer ApplicationContainer { get; private set; }
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            return new AutofacServiceProvider(Service.ServiceLocator.ApplicationContainer);
+            var builder = new ContainerBuilder();
+
+            builder.Populate(services);
+
+            //拉式扫描
+            //Scan Register 扫描注册 每个模块内部有对应模块的注册方法
+            var ph = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "ModuleLib");
+
+            var files = new DirectoryInfo(Path.Combine(System.IO.Directory.GetCurrentDirectory(), "ModuleLib")).GetFiles("*.dll");
+            if (files != null && files.Length > 0)
+            {
+                foreach (var item in files)
+                {
+                    builder.RegisterAssemblyModules(Assembly.LoadFile(item.FullName));
+                }
+            }
+            ApplicationContainer = builder.Build();
+            var log = ApplicationContainer.ResolveKeyed<IvanAuthSys.Interface.ILogger>("nlog");
+            Console.WriteLine(1233123);
+            log.Info("123456456456456456456456456456wjh");
+            return new AutofacServiceProvider(this.ApplicationContainer);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
