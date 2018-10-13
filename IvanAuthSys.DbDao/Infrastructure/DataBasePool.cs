@@ -58,7 +58,7 @@ namespace IvanAuthSys.DbDao.Infrastructure
                         }
                         catch (Exception e)
                         {
-                            log.Error(e);
+                            //log.Error(e);
                             Console.WriteLine(e.Message);
 
                         }
@@ -72,7 +72,7 @@ namespace IvanAuthSys.DbDao.Infrastructure
         {
             if (ConnString == "")
             {
-                ConnString = "";//DbBuilder.MySqlConnStr;
+                ConnString =ConnectionFactory.ConnectionString;//DbBuilder.MySqlConnStr;
             }
             return ConnString;
         }

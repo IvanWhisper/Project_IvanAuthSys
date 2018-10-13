@@ -10,7 +10,7 @@ namespace IvanAuthSys.DbDao.Infrastructure
 {
     public class ConnectionFactory : IConnectionFactory
     {
-        public static string ConnectionString => "Data Source=127.0.0.1;port=3306;Initial Catalog=ivanauthsys;user id=root;password=abc@123456;Charset=utf8;SslMode = none;";//ConfigurationManager.ConnectionStrings["DTAppCon"].ConnectionString;
+        public static string ConnectionString => "Data Source=localhost;port=3306;Initial Catalog=ivanauthsys;user id=root;password=abc@123456;Charset=utf8;SslMode=none;";//ConfigurationManager.ConnectionStrings["DTAppCon"].ConnectionString;
         public IDbConnection GetConnections
         {
             get

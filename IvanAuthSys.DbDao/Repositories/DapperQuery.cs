@@ -13,10 +13,9 @@ namespace IvanAuthSys.DbDao.Repositories
 {
     public class DapperQuery : IQuery
     {
-        protected ILogger log;
+        private ILogger log;
         public DapperQuery(ILogger log)
         {
-            //Conn = new MySql.Data.MySqlClient.MySqlConnection(DbBuilder.MySqlConnStr); //DbConnectionFactory.CreateDbConnection();
             this.log = log;
         }
         public T QuerySingle<T>(string sql, object paramPairs) where T : class

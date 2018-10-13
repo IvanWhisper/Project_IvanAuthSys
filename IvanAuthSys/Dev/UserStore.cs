@@ -9,8 +9,8 @@ namespace IvanAuthSys.Dev
     public class UserStore
     {
         public static List<LoginModel> loginmodels => new List<LoginModel>() {
-            new LoginModel{  UserName="admin",Password="123456" },
-            new LoginModel{  UserName="user", Password="123" },
+            new LoginModel{  UserID="admin",Password="123456" },
+            new LoginModel{  UserID="user", Password="123" },
         };
         public UserStore()
         {

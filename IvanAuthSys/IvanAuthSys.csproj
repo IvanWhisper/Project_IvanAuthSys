@@ -28,6 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DbEntities\DbEntities.csproj" />
+    <ProjectReference Include="..\IvanAuthSys.DbDao\IvanAuthSys.DbDao.csproj" />
     <ProjectReference Include="..\IvanAuthSys.Interface\IvanAuthSys.Interface.csproj" />
     <ProjectReference Include="..\IvanAuthSys.Model\IvanAuthSys.Model.csproj" />
     <ProjectReference Include="..\IvanAuthSys.Service\IvanAuthSys.Service.csproj" />

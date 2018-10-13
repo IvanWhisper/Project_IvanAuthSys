@@ -130,7 +130,7 @@ namespace IvanAuthSys.DbDao.UnitOfWork
                 }
                 catch (Exception ex)
                 {
-                    log.Error(ex);
+                    //log.Error(ex);
                     scope.Rollback();
                 }
                 finally
@@ -182,7 +182,7 @@ namespace IvanAuthSys.DbDao.UnitOfWork
                 }
                 catch (Exception ex)
                 {
-                    log.Error(ex);
+                    //log.Error(ex);
                     scope.Rollback();
                 }
                 finally

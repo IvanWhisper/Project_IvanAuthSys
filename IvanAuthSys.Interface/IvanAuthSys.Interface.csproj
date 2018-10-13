@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DbEntities\DbEntities.csproj" />
+    <ProjectReference Include="..\IvanAuthSys.Model\IvanAuthSys.Model.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,9 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using DbEntities;
 using IdentityModel;
 using IvanAuthSys.Data;
 using IvanAuthSys.Dev;
+using IvanAuthSys.Interface;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -83,6 +85,7 @@ namespace IvanAuthSys
                     builder.RegisterAssemblyModules(Assembly.LoadFile(item.FullName));
                 }
             }
+
             ApplicationContainer = builder.Build();
             var log = ApplicationContainer.ResolveKeyed<IvanAuthSys.Interface.ILogger>("nlog");
             Console.WriteLine(1233123);

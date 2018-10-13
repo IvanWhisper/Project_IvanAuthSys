@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DbEntities\DbEntities.csproj" />
     <ProjectReference Include="..\IvanAuthSys.DbDao\IvanAuthSys.DbDao.csproj" />
   </ItemGroup>
 
