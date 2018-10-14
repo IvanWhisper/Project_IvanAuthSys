@@ -14,7 +14,6 @@ namespace IvanAuthSys.DbDao
         {
             builder.Register(c => new DapperRepository<User>()).As<IRepository<User>>().InstancePerLifetimeScope();
             builder.RegisterType<DapperQuery>().As<IQuery>().InstancePerLifetimeScope();
-
         }
     }
 

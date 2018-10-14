@@ -15,10 +15,10 @@ namespace IvanAuthSys.Service.BusinessService
         {
             _log = log;
         }
-        public bool IsLogin(LoginModel loginModel, IQuery query)
+        public User VerifyUser(LoginModel loginModel, IQuery query)
         {
-            var user = query.QuerySingle<User>(SqlStr.UserQuery,new User() { UserName=loginModel.UserID});
-            return user != null && (user.Password.Equals(loginModel.Password));
+            var user = query.QuerySingle<User>(SqlStr.UserQuery,new User() { UserID=loginModel.UserID});
+            return user;
         }
     }
 }

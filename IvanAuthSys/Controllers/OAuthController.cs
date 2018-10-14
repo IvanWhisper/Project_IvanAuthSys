@@ -1,7 +1,10 @@
-﻿using IdentityModel;
+﻿using Autofac;
+using DbEntities;
+using IdentityModel;
 using IvanAuthSys.Data;
 using IvanAuthSys.Dev;
 using IvanAuthSys.Interface;
+using IvanAuthSys.Interface.IBusinessService;
 using IvanAuthSys.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -17,18 +20,25 @@ namespace IvanAuthSys.Controllers
     [Route("api/[controller]")]
     public class OAuthController : Controller
     {
-        IQuery _query;
+        ILifetimeScope _rootScope;
         ILogger _log;
-        public OAuthController(IQuery query,ILogger log)
+        IOAuthService _oauthService;
+        public OAuthController(ILifetimeScope rootScope,ILogger log,IOAuthService oauthService)
         {
+            _rootScope = rootScope;
             _log = log;
-            _query = query;
+            _oauthService = oauthService;
         }
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody]LoginModel loginModel)
         {
-            var user = UserStore.loginmodels.Where(c => c.UserID==loginModel.UserID).SingleOrDefault();
-            if (user == null||!(user.Password.Equals(loginModel.Password))) return Unauthorized();
+            User user=null;
+            using (var scope=_rootScope.BeginLifetimeScope())
+            {
+                user=_oauthService.VerifyUser(loginModel, scope.Resolve<IQuery>());
+            }
+            if(user==null)
+                return Unauthorized();
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Consts.Secret);
             var authTime = DateTime.UtcNow;
