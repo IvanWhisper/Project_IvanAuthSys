@@ -12,6 +12,7 @@ using IdentityModel;
 using IvanAuthSys.Data;
 using IvanAuthSys.Dev;
 using IvanAuthSys.Interface;
+using IvanAuthSys.Model;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -67,7 +68,7 @@ namespace IvanAuthSys
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Consts.Secret))
                 };
             });
-
+            services.Configure<RootAppSetting>(Configuration.GetSection("RootAppSetting"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             builder.RegisterType<UserStore>().AsSelf().SingleInstance();
